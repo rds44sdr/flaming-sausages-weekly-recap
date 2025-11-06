@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flaming Sausages — Week 9 Newsletter</title>
+<style>
+  /* ---------- Page & Print Setup ---------- */
+  @page {
+    size: Letter;
+    margin: 0.5in;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #111;
+    background: #f7f7f9;
+  }
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.5in;
+    box-sizing: border-box;
+    /* Flaming edge using double gradient */
+    background:
+      linear-gradient(90deg, rgba(255,120,60,.9), rgba(255,190,70,.9)) left / 10px 100% no-repeat,
+      linear-gradient(90deg, rgba(255,190,70,.9), rgba(255,120,60,.9)) right / 10px 100% no-repeat,
+      #ffffff;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    position: relative;
+  }
+  /* Subtle football field watermark (won't overpower text) */
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0.5in;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,120,0,0.06) 0px,
+        rgba(0,120,0,0.06) 2px,
+        transparent 2px,
+        transparent 60px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+  }
+  .league {
+    font-weight: 800;
+    font-size: 34px;
+    letter-spacing: .5px;
+  }
+  .subtitle {
+    font-weight: 700;
+    font-size: 18px;
+    color: #b11d1d;
+    margin-top: 2px;
+  }
+  .weekline {
+    font-size: 12px;
+    color: #2d6a4f;
+    margin-top: 2px;
+  }
+
+  /* ---------- Grid Layout ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .full {
+    grid-column: 1 / -1;
+  }
+
+  /* ---------- Panels ---------- */
+  .panel {
+    background: rgba(255,255,255,.92);
+    border: 1px solid #e6e6ee;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    padding: 14px 16px;
+  }
+  .panel h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel h3 .badge {
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(90deg,#e11d48,#f97316);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .panel li + li { margin-top: 4px; }
+
+  /* Two-column lists inside panels */
+  .twocol {
+    columns: 2;
+    column-gap: 22px;
+  }
+
+  /* Awards table styles */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .table th, .table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+  }
+  .table th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: #374151;
+  }
+  .kicker { color: #2563eb; }
+  .def { color: #7c3aed; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #4b5563;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- Print tweaks ---------- */
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="league">Flaming Sausages</div>
+      <div class="subtitle">Week 9 — “Suckbags At The Summit”</div>
+      <div class="weekline">Team Awards • Position Leaders • Story of the Week</div>
+    </header>
+
+    <section class="grid">
+      <!-- Position Best -->
+      <div class="panel">
+        <h3><span class="badge">🏆 Position Best</span></h3>
+        <ul class="twocol">
+          <li><strong>QB</strong> — cape cod cornholers <b>37.5</b></li>
+          <li><strong>RB</strong> — Team Suckbags <b>41.8</b></li>
+          <li><strong>WR</strong> — Hail‑Mary Poppins <b>45.6</b></li>
+          <li><strong>TE</strong> — cape cod cornholers <b>37.3</b></li>
+          <li><strong>FLEX</strong> — 1bourbon1scotch1beer <b>21.3</b></li>
+          <li class="kicker"><strong>K</strong> — Cape Leatherheads <b>17.0</b></li>
+          <li class="def"><strong>D/ST</strong> — cape cod cornholers <b>11.0</b></li>
+        </ul>
+      </div>
+
+      <!-- Position Worst -->
+      <div class="panel">
+        <h3><span class="badge">🥀 Position Worst</span></h3>
+        <ul class="twocol">
+          <li><strong>QB</strong> — Paws Leslie <b>4.2</b></li>
+          <li><strong>RB</strong> — Hail‑Mary Poppins <b>11.1</b></li>
+          <li><strong>WR</strong> — cape cod cornholers <b>1.6</b></li>
+          <li><strong>TE</strong> — Team Suckbags <b>3.0</b></li>
+          <li><strong>FLEX</strong> — Fourth and Forever <b>4.3</b></li>
+          <li class="kicker"><strong>K</strong> — CTE Patient <b>2.0</b></li>
+          <li class="def"><strong>D/ST</strong> — 1bourbon1scotch1beer <b>1.0</b></li>
+        </ul>
+      </div>
+
+      <!-- High/Low Team -->
+      <div class="panel">
+        <h3><span class="badge">📈 High Team</span></h3>
+        <table class="table">
+          <tr><th>Team</th><th>Points</th></tr>
+          <tr><td><b>Team Suckbags</b></td><td><b>137.3</b></td></tr>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h3><span class="badge">📉 Low Team</span></h3>
+        <table class="table">
+          <tr><th>Team</th><th>Points</th></tr>
+          <tr><td><b>Throwbi‑Wan Kenobi</b></td><td><b>66.7</b></td></tr>
+        </table>
+      </div>
+
+      <!-- Luckiest/Tough Loss -->
+      <div class="panel full">
+        <h3><span class="badge">🍀 Luckiest Win & 💔 Tough Loss</span></h3>
+        <table class="table">
+          <tr><th>Award</th><th>Team</th><th>Points</th></tr>
+          <tr><td>Luckiest Win</td><td><b>Paws Leslie</b></td><td><b>94.0</b></td></tr>
+          <tr><td>Tough Loss</td><td><b>Cape Leatherheads</b></td><td><b>114.9</b></td></tr>
+        </table>
+      </div>
+
+      <!-- Weekly Story -->
+      <div class="panel full">
+        <h3><span class="badge">📰 Weekly Story</span></h3>
+        <p style="margin:0">
+          Team Suckbags planted a flag on Week 9 with a 137.3‑point heater, while Throwbi‑Wan Kenobi’s
+          sabers ran out of batteries at 66.7. Hail‑Mary Poppins delivered WR fireworks and Cape Leatherheads
+          took the league’s nastiest beat despite triple‑digit scoring. Onward to Week 10 — can the Cornholers
+          keep the positional crown, and will Kenobi find the Force?
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Print Tips: File → Print → “Save as PDF” • Margins: Default or None • Enable “Background Graphics” for best look.
+    </footer>
+  </div>
+</body>
+</html>
