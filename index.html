@@ -1,123 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Flaming Sausages — Week 10 Newsletter (Updated)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#fff8f4;
-    --paper:#ffffff;
-    --ink:#1f2937;
-    --muted:#6b7280;
-    --accent:#fb923c;
-    --accent-2:#f97316;
-    --chip:#fee2e2;
-    --good:#10b981;
-    --bad:#ef4444;
+  @page { size: Letter; margin: 0.5in; }
+  html, body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #111; background: #f7f7f9; }
+  .page {
+    max-width: 8.5in; margin: 0 auto; padding: 0.5in; box-sizing: border-box;
+    background:
+      linear-gradient(90deg, rgba(255,120,60,.9), rgba(255,190,70,.9)) left / 10px 100% no-repeat,
+      linear-gradient(90deg, rgba(255,190,70,.9), rgba(255,120,60,.9)) right / 10px 100% no-repeat,
+      #ffffff;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+    position: relative;
   }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.35}
-  .page{max-width:980px;margin:28px auto;padding:0 16px}
-  .sheet{background:var(--paper);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,.08);position:relative;overflow:hidden}
-  .sheet::before{content:"";position:absolute;inset:0;border:14px solid transparent;border-image: linear-gradient(180deg,#ffd27c,#ff9b42,#ff6a3d,#ffb347) 1;pointer-events:none;border-radius:20px}
-  header{padding:40px 36px 12px}
-  h1{margin:0;font-weight:800;font-size:44px;letter-spacing:.3px}
-  h2{margin:6px 0 0;font-weight:700;font-size:22px;color:#7c2d12}
-  .grid{display:grid;gap:22px;padding:22px 22px 30px}
-  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  .card{background:#fff;border-radius:16px;border:1px solid #f1f5f9;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-  .card .head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #f1f5f9;background:linear-gradient(0deg,#fff, #fff8f4)}
-  .card .head h3{margin:0;font-size:16px;font-weight:800;letter-spacing:.3px}
-  .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#fff0e6;color:#7c2d12;font-weight:700}
-  table{width:100%;border-collapse:collapse}
-  th,td{padding:10px 12px;border-bottom:1px solid #eef2f7;font-size:14px}
-  th{color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px;font-size:12px}
-  .kpi{font-weight:800}
-  .muted{color:var(--muted)}
-  .pill{font-weight:800;border-radius:10px;padding:2px 8px;font-size:12px}
-  .good{color:#065f46}
-  .bad{color:#7f1d1d}
-  .section{grid-column:1/-1}
-  .foot{padding:0 22px 30px;color:var(--muted);font-size:13px}
-  .nowrap{white-space:nowrap}
+  .page::before {
+    content: "";
+    position: absolute; inset: 0.5in;
+    background: repeating-linear-gradient(to bottom, rgba(0,120,0,0.06) 0px, rgba(0,120,0,0.06) 2px, transparent 2px, transparent 60px);
+    pointer-events: none; z-index: 0;
+  }
+  header { text-align: center; position: relative; z-index: 1; margin-bottom: 10px; }
+  .league { font-weight: 800; font-size: 34px; letter-spacing: .5px; }
+  .subtitle { font-weight: 700; font-size: 18px; color: #b11d1d; margin-top: 2px; }
+  .weekline { font-size: 12px; color: #2d6a4f; margin-top: 2px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: relative; z-index: 1; }
+  .full { grid-column: 1 / -1; }
+  .panel { background: rgba(255,255,255,.92); border: 1px solid #e6e6ee; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 14px 16px; }
+  .panel h3 { margin: 0 0 8px 0; font-size: 14px; font-weight: 800; letter-spacing: .3px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  .panel h3 .badge { font-size: 12px; font-weight: 800; color: #fff; background: linear-gradient(90deg,#e11d48,#f97316); padding: 2px 8px; border-radius: 999px; }
+  .panel ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.45; }
+  .panel li + li { margin-top: 4px; }
+  .twocol { columns: 2; column-gap: 22px; }
+  .table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .table th, .table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+  .table th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: #374151; }
+  .muted { color: #6b7280; font-style: italic; }
+  footer { text-align: center; margin-top: 10px; font-size: 11px; color: #4b5563; position: relative; z-index: 1; }
+  @media print { body { background: #fff; } .page { box-shadow: none; } }
 </style>
 </head>
 <body>
   <div class="page">
-    <div class="sheet">
-      <header>
-        <h1>Flaming Sausages</h1>
-        <h2>Week 10 — “Action Jackson… in Witness Protection”</h2>
-      </header>
+    <header>
+      <div class="league">Flaming Sausages</div>
+      <div class="subtitle">Week 10 — “Action Jackson… in Witness Protection”</div>
+      <div class="weekline">Team Awards • Matchups • Story of the Week</div>
+    </header>
 
-      <div class="grid">
-        <!-- TEAM AWARDS -->
-        <section class="card">
-          <div class="head"><span class="chip">🏆 TEAM AWARDS</span></div>
-          <div style="padding:6px 8px 2px">
-            <table>
-              <thead>
-                <tr><th style="width:44%">Award</th><th style="width:36%">Team</th><th class="nowrap">Points</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>⭐ <b>High Team</b></td><td><b>Fourth and Forever</b></td><td class="kpi">145.9</td></tr>
-                <tr><td>🫥 <b>Low Team</b></td><td><b>Action Jackson</b></td><td class="kpi">41.7</td></tr>
-                <tr><td>💥 <b>Biggest Blowout</b></td><td><b>Hail‑Mary Poppins</b> over Action Jackson</td><td class="kpi">+99.1</td></tr>
-                <tr><td>🧲 <b>Closest Game</b></td><td><b>Throwbi‑Wan Kenobi</b> over cape cod cornholers</td><td class="kpi">+1.6</td></tr>
-                <tr><td>🍀 <b>Luckiest Win</b></td><td><b>Paws Leslie</b></td><td class="kpi">89.9</td></tr>
-                <tr><td>💔 <b>Tough Loss</b></td><td><b>1bourbon1scotch 1beer</b></td><td class="kpi">111.5</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <!-- POSITION LEADERS (unchanged other than layout text) -->
-        <section class="card">
-          <div class="head"><span class="chip">📊 POSITION LEADERS</span></div>
-          <div style="padding:8px 16px 14px">
-            <p class="muted" style="margin:6px 0 12px">Team totals by starter at each position.</p>
-            <table>
-              <thead><tr><th>Position</th><th>Best (Team — Total)</th><th>Worst (Team — Total)</th></tr></thead>
-              <tbody>
-                <tr><td>QB</td><td>Show Me Your TD's — 26.7</td><td>cape cod cornholers — 24.3</td></tr>
-                <tr><td>RB</td><td>Fourth &amp; Forever — 48.1</td><td>Puka Amon Deez Nuts — 0.5</td></tr>
-                <tr><td>WR</td><td>Hail‑Mary Poppins — 45.6</td><td>Action Jackson — 0.8</td></tr>
-                <tr><td>TE</td><td>Hail‑Mary Poppins — 23.2</td><td>—</td></tr>
-                <tr><td>FLEX</td><td>Team Suckbags — 27.5</td><td>Hail‑Mary Poppins — 0.0</td></tr>
-                <tr><td>D/ST</td><td>Fourth &amp; Forever — 20.0</td><td>Cape Leatherheads — −2.0</td></tr>
-                <tr><td>K</td><td>Cape Leatherheads — 15.0</td><td>Puka Amon Deez Nuts — 1.0</td></tr>
-              </tbody>
-            </table>
-            <p class="muted" style="margin:10px 0 0;font-size:12px">*This section is unchanged from your prior Week‑10 file; only the two awards above were updated per your request.</p>
-          </div>
-        </section>
-
-        <!-- MATCHUP RESULTS -->
-        <section class="card section">
-          <div class="head"><span class="chip">📅 MATCHUP RESULTS</span></div>
-          <div style="padding:6px 8px 2px">
-            <table>
-              <thead><tr><th>Winner</th><th class="nowrap">Score</th><th>Loser</th><th class="nowrap">Score</th></tr></thead>
-              <tbody>
-                <tr><td>Throwbi‑Wan Kenobi</td><td class="kpi">96.3</td><td>cape cod cornholers</td><td>94.7</td></tr>
-                <tr><td>Hail‑Mary Poppins</td><td class="kpi">140.8</td><td>Action Jackson</td><td>41.7</td></tr>
-                <tr><td>Fourth and Forever</td><td class="kpi">145.9</td><td>1bourbon1scotch1beer</td><td>111.5</td></tr>
-                <tr><td>Team Suckbags</td><td class="kpi">127.6</td><td>Cape Leatherheads</td><td>97.9</td></tr>
-                <tr><td>Show Me Your TD's</td><td class="kpi">115.9</td><td>Puka Amon Deez Nuts</td><td>97.9</td></tr>
-                <tr><td>Paws Leslie</td><td class="kpi">89.9</td><td>CTE Patient</td><td>75.3</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+    <section class="grid">
+      <div class="panel">
+        <h3><span class="badge">🏆 Team Awards</span></h3>
+        <table class="table">
+          <tr><th>Award</th><th>Team</th><th>Points</th></tr>
+          <tr><td>📈 High Team</td><td><b>Fourth and Forever</b></td><td><b>145.9</b></td></tr>
+          <tr><td>📉 Low Team</td><td><b>Action Jackson</b></td><td><b>41.7</b></td></tr>
+          <tr><td>🧨 Biggest Blowout</td><td><b>Hail‑Mary Poppins</b> over Action Jackson</td><td><b>99.1</b></td></tr>
+          <tr><td>🔍 Closest Game</td><td><b>Throwbi‑Wan Kenobi</b> over cape cod cornholers</td><td><b>1.6</b></td></tr>
+          <tr><td>🍀 Luckiest Win</td><td><b>Paws Leslie</b></td><td><b>89.9</b></td></tr>
+          <tr><td>💔 Tough Loss</td><td><b>1bourbon1scotch 1beer</b></td><td><b>111.5</b></td></tr>
+        </table>
       </div>
 
-      <div class="foot">© Flaming Sausages League — Week 10. Updated: Luckiest Win &amp; Tough Loss logic only.</div>
-    </div>
+      <div class="panel">
+        <h3><span class="badge">📊 Position Leaders (Team Totals)</span></h3>
+        <ul class="twocol">
+          <li><strong>QB</strong> — <b>Best:</b> Show Me Your TD’s <b>26.7</b> • <b>Worst:</b> Paws Leslie <b>4.8</b></li>
+          <li><strong>RBs</strong> — <b>Best:</b> Fourth &amp; Forever <b>61.9</b> • <b>Worst:</b> Action Jackson <b>7.5</b></li>
+          <li><strong>WRs</strong> — <b>Best:</b> Hail‑Mary Poppins <b>34.5</b> • <b>Worst:</b> Action Jackson <b>0.0</b></li>
+          <li><strong>TE</strong> — <b>Best:</b> Hail‑Mary Poppins <b>23.2</b> • <b>Worst:</b> cape cod cornholers <b>3.2</b></li>
+          <li><strong>FLEX</strong> — <b>Best:</b> Team Suckbags <b>27.5</b> • <b>Worst:</b> Hail‑Mary Poppins <b>0.0</b></li>
+          <li><strong>D/ST</strong> — <b>Best:</b> Fourth &amp; Forever <b>20.0</b> • <b>Worst:</b> Cape Leatherheads <b>-2.0</b></li>
+          <li><strong>K</strong> — <b>Best:</b> Cape Leatherheads <b>15.0</b> • <b>Worst:</b> Puka Amon Deez Nuts <b>1.0</b></li>
+        </ul>
+        <div class="muted" style="margin-top:6px;">RBs/WRs are two-starter team totals.</div>
+      </div>
+
+      <div class="panel full">
+        <h3><span class="badge">🗂 Matchup Results</span></h3>
+        <table class="table">
+          <tr><th>Winner</th><th>Score</th><th>Loser</th><th>Score</th></tr>
+          <tr><td><b>Throwbi‑Wan Kenobi</b></td><td><b>96.3</b></td><td>cape cod cornholers</td><td>94.7</td></tr>
+          <tr><td><b>Hail‑Mary Poppins</b></td><td><b>140.8</b></td><td>Action Jackson</td><td>41.7</td></tr>
+          <tr><td><b>Fourth and Forever</b></td><td><b>145.9</b></td><td>1bourbon1scotch1beer</td><td>111.5</td></tr>
+          <tr><td><b>Team Suckbags</b></td><td><b>127.6</b></td><td>Cape Leatherheads</td><td>97.9</td></tr>
+          <tr><td><b>Show Me Your TD’s</b></td><td><b>115.9</b></td><td>Puka Amon Deez Nuts</td><td>97.9</td></tr>
+          <tr><td><b>Paws Leslie</b></td><td><b>89.9</b></td><td>CTE Patient</td><td>75.3</td></tr>
+        </table>
+      </div>
+
+      <div class="panel full">
+        <h3><span class="badge">📰 Weekly Story</span></h3>
+        <p style="margin:0">
+          Under the banner of <b>“Action Jackson… in Witness Protection,”</b> this week delivered chaos, tears, and at least one owner questioning whether they understand football or numbers at all. Action Jackson took the field with holes in the roster so large FEMA should’ve been alerted — it didn’t help that the players who <i>did</i> show up seemed committed to a league‑wide protest against scoring points.
+        </p>
+        <p style="margin:10px 0 0 0">
+          Meanwhile, <b>Hail‑Mary Poppins</b> didn’t just win — they committed statistical war crimes. Their squad exploded for 140, hitting harder than a Poppins wooden spoon. Gibbs, McBride, and London refused to come back down to Earth, putting up fantasy totals normally reserved for dreams or broken scoring formats. If there was mercy, no one saw it.
+        </p>
+        <p style="margin:10px 0 0 0">
+          Then came <b>Fourth &amp; Forever</b>, who went nuclear when Jonathan Taylor accidentally swallowed a star and dropped 48. The rest of that squad rode the blast wave to a win that wasn’t just decisive — it was disrespectful.
+        </p>
+        <p style="margin:10px 0 0 0">
+          <b>Team Suckbags</b> continued their hot streak, proving that yes, great things can come from terrible team names. The <b>Cape Cod Cornholers</b> played like they’d never seen the sport before, while <b>Puka Amon Deez Nuts</b> stayed just competitive enough to annoy their opponents without actually winning anything meaningful.
+        </p>
+        <p style="margin:10px 0 0 0">
+          Over in the quiet corner, <b>CTE Patient</b> lived up to their name, forgetting how points work. And <b>Action Jackson</b>, already missing half a lineup, decided to take it all the way down — presumably hoping the Fantasy Gods would grant mercy. They did not.
+        </p>
+        <p style="margin:10px 0 0 0">
+          With playoffs approaching, benches outperform starters, stars ghost owners, and waiver‑wire trash turns into treasure overnight. Buckle up — Week 11 is next, and the carnage is only getting started.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Print Tips: File → Print → “Save as PDF” • Margins: Default or None • Enable “Background Graphics” for best look.
+    </footer>
   </div>
 </body>
 </html>
