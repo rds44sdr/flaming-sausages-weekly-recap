@@ -1,126 +1,78 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Flaming Sausages — Week 12 Newsletter</title>
+<meta charset="UTF-8">
+<title>Flaming Sausages Weekly Recap – Week 13</title>
 <style>
-  @page { size: Letter; margin: 0.5in; }
-  html, body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #111; background: #f7f7f9; }
-  .page {
-    max-width: 8.5in; margin: 0 auto; padding: 0.5in; box-sizing: border-box;
-    background:
-      linear-gradient(90deg, rgba(255,120,60,.9), rgba(255,190,70,.9)) left / 10px 100% no-repeat,
-      linear-gradient(90deg, rgba(255,190,70,.9), rgba(255,120,60,.9)) right / 10px 100% no-repeat,
-      #ffffff;
-    box-shadow: 0 8px 30px rgba(0,0,0,.12);
-    position: relative;
-  }
-  .page::before {
-    content: "";
-    position: absolute; inset: 0.5in;
-    background: repeating-linear-gradient(to bottom, rgba(0,120,0,0.06) 0px, rgba(0,120,0,0.06) 2px, transparent 2px, transparent 60px);
-    pointer-events: none; z-index: 0;
-  }
-  header { text-align: center; position: relative; z-index: 1; margin-bottom: 10px; }
-  .league { font-weight: 800; font-size: 34px; letter-spacing: .5px; }
-  .subtitle { font-weight: 700; font-size: 18px; color: #b11d1d; margin-top: 2px; }
-  .weekline { font-size: 12px; color: #2d6a4f; margin-top: 2px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: relative; z-index: 1; }
-  .full { grid-column: 1 / -1; }
-  .panel { background: rgba(255,255,255,.92); border: 1px solid #e6e6ee; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,.06); padding: 14px 16px; }
-  .panel h3 { margin: 0 0 8px 0; font-size: 14px; font-weight: 800; letter-spacing: .3px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
-  .panel h3 .badge { font-size: 12px; font-weight: 800; color: #fff; background: linear-gradient(90deg,#e11d48,#f97316); padding: 2px 8px; border-radius: 999px; }
-  .panel ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.45; }
-  .panel li + li { margin-top: 4px; }
-  .twocol { columns: 2; column-gap: 22px; }
-  .table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .table th, .table td { padding: 8px 10px; border-bottom: 1px solid #eee; }
-  .table th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: #374151; }
-  .muted { color: #6b7280; font-style: italic; }
-  footer { text-align: center; margin-top: 10px; font-size: 11px; color: #4b5563; position: relative; z-index: 1; }
-  @media print { body { background: #fff; } .page { box-shadow: none; } }
+    body { font-family: Arial, sans-serif; background: #fafafa; padding: 20px; line-height: 1.5; }
+    h1 { text-align: center; margin-bottom: 5px; }
+    h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+    th { background: #f0f0f0; }
+    .highlight { font-weight: bold; }
 </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="league">Flaming Sausages</div>
-      <div class="subtitle">Week 12 — “Gibbs + Poppins = The New World Order”</div>
-      <div class="weekline">Team Awards • Matchups • Story of the Week</div>
-    </header>
 
-    <section class="grid">
-      <!-- Team Awards -->
-      <div class="panel">
-        <h3><span class="badge">🏆 Team Awards</span></h3>
-        <table class="table">
-          <tr><th>Award</th><th>Team</th><th>Points</th></tr>
-          <tr><td>📈 High Team</td><td><b>Hail-Mary Poppins</b></td><td><b>155.9</b></td></tr>
-          <tr><td>📉 Low Team</td><td><b>Cape Leatherheads</b></td><td><b>64.5</b></td></tr>
-          <tr><td>🧨 Biggest Blowout</td><td><b>Fourth and Forever</b> over Team Suckbags</td><td><b>53.1</b></td></tr>
-          <tr><td>🔍 Closest Game</td><td><b>1bourbon1scotch 1beer</b> over Paws Leslie</td><td><b>7.0</b></td></tr>
-          <tr><td>🍀 Luckiest Win</td><td><b>Puka Amon Deez Nuts</b></td><td><b>103.5</b></td></tr>
-          <tr><td>💔 Tough Loss</td><td><b>Cape Cod Cornholers</b></td><td><b>131.1</b></td></tr>
-        </table>
-      </div>
+<h1>🔥 WEEK 13 — The Calm Before the Playoffs Storm 🔥</h1>
 
-      <!-- Position Leaders -->
-      <div class="panel">
-        <h3><span class="badge">📊 Position Leaders (Team Totals)</span></h3>
-        <ul class="twocol">
-          <li><strong>QB</strong> — <b>Best:</b> CTE Patient <b>30.3</b> • <b>Worst:</b> Team Suckbags <b>6.6</b></li>
-          <li><strong>RBs</strong> — <b>Best:</b> Hail-Mary Poppins <b>61.0</b> • <b>Worst:</b> Puka Amon Deez Nuts <b>7.4</b></li>
-          <li><strong>WRs</strong> — <b>Best:</b> Puka Amon Deez Nuts <b>50.5</b> • <b>Worst:</b> Throwbi-Wan Kenobi <b>3.3</b></li>
-          <li><strong>TE</strong> — <b>Best:</b> Fourth and Forever <b>21.0</b> • <b>Worst:</b> Show Me Your TD’s <b>1.3</b></li>
-          <li><strong>FLEX</strong> — <b>Best:</b> cape cod cornholers <b>16.8</b> • <b>Worst:</b> Show Me Your TD’s <b>0.0</b></li>
-          <li><strong>D/ST</strong> — <b>Best:</b> Throwbi-Wan Kenobi <b>17.0</b> • <b>Worst:</b> Cape Leatherheads <b>-1.0</b></li>
-          <li><strong>K</strong> — <b>Best:</b> Hail-Mary Poppins <b>18.0</b> • <b>Worst:</b> Team Suckbags <b>4.0</b></li>
-        </ul>
-        <div class="muted" style="margin-top:6px;">RBs/WRs are two-starter team totals.</div>
-      </div>
+<h2>📚 Storylines of the Week</h2>
+<ul>
+    <li><strong>1.</strong> Action Jackson delivered a late-season masterpiece, dropping 129.3 and locking themselves firmly into playoff form.</li>
+    <li><strong>2.</strong> Paws Leslie shocked the league by stunning the #1 seed Fourth and Forever on their own turf — a win with major playoff implications.</li>
+    <li><strong>5.</strong> Hail-Mary Poppins secured another steady, professional win, proving once again why they’ve been a top seed all season.</li>
+    <li><strong>10.</strong> Show Me Your TD’s stayed alive with a must-win victory, surviving a brutal midseason slump.</li>
+    <li><strong>12.</strong> Cape Cod Cornholers' playoff hopes took a hit after dropping a winnable matchup — now Week 14 becomes a true win-and-pray scenario.</li>
+    <li><strong>15.</strong> Team Suckbags collapsed offensively at the worst possible time, posting only 66.2 in a blowout loss.</li>
+    <li><strong>16.</strong> Fourth and Forever showed rare weakness as the #1 seed fell flat — is this simply a late-season nap or something bigger?</li>
 
-      <!-- Matchup Results -->
-      <div class="panel full">
-        <h3><span class="badge">🗂 Matchup Results</span></h3>
-        <table class="table">
-          <tr><th>Winner</th><th>Score</th><th>Loser</th><th>Score</th></tr>
-          <tr><td><b>Hail-Mary Poppins</b></td><td><b>155.9</b></td><td>cape cod cornholers</td><td>131.1</td></tr>
-          <tr><td><b>Fourth and Forever</b></td><td><b>119.3</b></td><td>Team Suckbags</td><td>66.2</td></tr>
-          <tr><td><b>Action Jackson</b></td><td><b>111.2</b></td><td>Show Me Your TD’s</td><td>92.2</td></tr>
-          <tr><td><b>1bourbon1scotch 1beer</b></td><td><b>111.9</b></td><td>Paws Leslie</td><td>104.9</td></tr>
-          <tr><td><b>CTE Patient</b></td><td><b>109.6</b></td><td>Throwbi-Wan Kenobi</td><td>67.5</td></tr>
-          <tr><td><b>Puka Amon Deez Nuts</b></td><td><b>103.5</b></td><td>Cape Leatherheads</td><td>64.5</td></tr>
-        </table>
-      </div>
+    <!-- NEW 10 STORYLINES YOU REQUESTED -->
+    <li><strong>17.</strong> Puka Amon Deez Nuts nearly pulled off a comeback but fell just short as their stars underperformed in a crucial game.</li>
+    <li><strong>18.</strong> CTE Patient posted the week’s lowest score once again, sealing a rough season but still playing spoiler moving forward.</li>
+    <li><strong>19.</strong> Cape Leatherheads kept things respectable early but ultimately couldn’t match the firepower from across the field.</li>
+    <li><strong>20.</strong> Throwbi-Wan Kenobi ran out of Jedi tricks, stumbling through a rough offensive week when they needed magic most.</li>
+    <li><strong>21.</strong> 1bourbon1scotch 1beer escaped with the narrowest win of the season — a razor-thin 1.6-point edge that keeps the playoffs in reach.</li>
+    <li><strong>22.</strong> Show Me Your TD’s got unexpected bench heroics, raising questions about possible lineup regrets heading into Week 14.</li>
+    <li><strong>23.</strong> Team Suckbags’ defense imploded, delivering one of their worst performances of the season in a must-win matchup.</li>
+    <li><strong>24.</strong> Action Jackson’s wide receivers erupted for 55.6 combined, leading all teams and powering their league-high score.</li>
+    <li><strong>25.</strong> Paws Leslie’s midseason slump seems officially over — the offense is humming at the perfect time.</li>
+    <li><strong>26.</strong> The playoff race tightened dramatically, with five teams tied at 6–7 heading into a win-or-go-home Week 14.</li>
+</ul>
 
-      <!-- Weekly Story -->
-      <div class="panel full">
-        <h3><span class="badge">📰 Weekly Story</span></h3>
-        <p style="margin:0">
-          Week 12 will go down as the moment <b>“Gibbs + Poppins = The New World Order”</b> stopped being a joke and became league canon. Jahmyr Gibbs detonated for a ridiculous <b>49.9</b> points, turning <b>Hail-Mary Poppins</b> into a fully weaponized fantasy offense and erasing the laws of physics in the process. The unfortunate victim of this RB-fueled war crime was the <b>cape cod cornholers</b>, who dropped a massive <b>131.1</b> and still lost by nearly 25. That’s not a loss, that’s a trauma event.
-        </p>
-        <p style="margin:10px 0 0 0">
-          On the other end of the spectrum, <b>Team Suckbags</b> lived up to the brand in the worst possible way. A limp <b>66.2</b> points headlined the league’s biggest blowout as <b>Fourth and Forever</b> cruised to a stress-free win. It wasn’t even one of F&amp;F’s signature nuclear weeks — they just showed up, posted a professional <b>119.3</b>, and watched Suckbags collapse into a smoldering pile of sad box scores.
-        </p>
-        <p style="margin:10px 0 0 0">
-          After last week’s horror film, <b>Action Jackson</b> finally decided to participate in the sport again. A steady <b>111.2</b> reminded everyone that this roster still has teeth when Lamar, Breece, and friends bother to show up. Across the field, <b>Show Me Your TD’s</b> put up a modest <b>92.2</b> and continued to undermine their own team name — this week they mostly showed field goals, missed opportunities, and a goose egg in the FLEX.
-        </p>
-        <p style="margin:10px 0 0 0">
-          Over in <b>Paws Leslie</b> land, the infamous QB Serial Killer stepped aside for a week and let <b>Sam Darnold</b> live. The supporting cast did the heavy lifting: Ashton Jeanty and Davante Adams carried the offense, while the Steelers D/ST and Cairo Santos chipped in just enough to keep things respectable in a narrow loss. It wasn’t flashy, but it was proof that Paws can field a functional lineup without immediately detonating another quarterback’s season.
-        </p>
-        <p style="margin:10px 0 0 0">
-          <b>CTE Patient</b>, already eliminated, absolutely refused to go quietly. Powered by <b>Jalen Hurts’ 30.3</b> and a strong supporting cast, they dropped <b>109.6</b> on <b>Throwbi-Wan Kenobi</b> and reminded the league that, mathematically dead or not, they’re still perfectly capable of wrecking someone else’s season. Meanwhile, the <b>Cape Leatherheads</b> hit rock bottom with a brutal <b>64.5</b> — a performance so ugly that even their own bench probably looked away.
-        </p>
-        <p style="margin:10px 0 0 0">
-          With one week to go before the playoffs, the message from Week 12 is clear: if you’re not dropping something north of 110, you’re living dangerously. Gibbs broke the league, Poppins planted their flag at the top, and a whole lot of teams are staring at their lineups wondering how the hell they’re going to survive Week 13.
-        </p>
-      </div>
-    </section>
+<h2>🏆 Team Awards</h2>
+<table>
+<tr><th>Award</th><th>Team</th><th>Points</th></tr>
+<tr><td>📈 High Team</td><td>Action Jackson</td><td>129.3</td></tr>
+<tr><td>📉 Low Team</td><td>CTE Patient</td><td>64.8</td></tr>
+<tr><td>🧨 Biggest Blowout</td><td>Action Jackson over CTE Patient</td><td>64.5</td></tr>
+<tr><td>🔍 Closest Game</td><td>1bourbon1scotch 1beer over Puka Amon Deez Nuts</td><td>1.6</td></tr>
+<tr><td>🍀 Luckiest Win</td><td>1bourbon1scotch 1beer</td><td>89.1</td></tr>
+<tr><td>💔 Tough Loss</td><td>cape cod cornholers</td><td>96.3</td></tr>
+</table>
 
-    <footer>
-      Print Tips: File → Print → “Save as PDF” • Margins: Default or None • Enable “Background Graphics” for best look.
-    </footer>
-  </div>
+<h2>📊 Position Leaders (Team Totals)</h2>
+<table>
+<tr><th>Position</th><th>Best</th><th>Worst</th></tr>
+<tr><td>QB</td><td>Hail-Mary Poppins — 29.0</td><td>Action Jackson — 5.7</td></tr>
+<tr><td>RBs</td><td>Throwbi-Wan Kenobi — 39.1</td><td>CTE Patient — 8.4</td></tr>
+<tr><td>WRs</td><td>Action Jackson — 55.6</td><td>Hail-Mary Poppins — 5.1</td></tr>
+<tr><td>TE</td><td>cape cod cornholers — 20.3</td><td>Cape Leatherheads — 3.7</td></tr>
+<tr><td>FLEX</td><td>Paws Leslie — 19.8</td><td>CTE Patient — 1.4</td></tr>
+<tr><td>D/ST</td><td>Fourth and Forever — 27.0</td><td>cape cod cornholers / Puka Amon Deez Nuts — 0.0</td></tr>
+<tr><td>K</td><td>Cape Leatherheads — 19.0</td><td>Team Suckbags — 1.0</td></tr>
+</table>
+
+<h2>🗂 Week 13 Matchup Results</h2>
+<table>
+<tr><th>Winner</th><th>Score</th><th>Loser</th><th>Score</th></tr>
+<tr><td>Action Jackson</td><td>129.3</td><td>CTE Patient</td><td>64.8</td></tr>
+<tr><td>Paws Leslie</td><td>109.3</td><td>Fourth and Forever</td><td>95.5</td></tr>
+<tr><td>Show Me Your TD’s</td><td>109.2</td><td>cape cod cornholers</td><td>96.3</td></tr>
+<tr><td>1bourbon1scotch 1beer</td><td>89.1</td><td>Puka Amon Deez Nuts</td><td>87.5</td></tr>
+<tr><td>Throwbi-Wan Kenobi</td><td>106.8</td><td>Cape Leatherheads</td><td>83.6</td></tr>
+<tr><td>Team Suckbags</td><td>90.2</td><td>Hail-Mary Poppins</td><td>101.0</td></tr>
+</table>
+
 </body>
 </html>
