@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flaming Sausages Weekly Recap – Week 13</title>
+<style>
+    body { font-family: Arial, sans-serif; background: #fafafa; padding: 20px; line-height: 1.5; }
+    h1 { text-align: center; margin-bottom: 5px; }
+    h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+    th { background: #f0f0f0; }
+    .highlight { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h1>🔥 WEEK 13 — The Calm Before the Playoffs Storm 🔥</h1>
+
+<h2>📚 Storylines of the Week</h2>
+<ul>
+    <li><strong>1.</strong> Action Jackson delivered a late-season masterpiece, dropping 129.3 and locking themselves firmly into playoff form.</li>
+    <li><strong>2.</strong> Paws Leslie shocked the league by stunning the #1 seed Fourth and Forever on their own turf — a win with major playoff implications.</li>
+    <li><strong>5.</strong> Hail-Mary Poppins secured another steady, professional win, proving once again why they’ve been a top seed all season.</li>
+    <li><strong>10.</strong> Show Me Your TD’s stayed alive with a must-win victory, surviving a brutal midseason slump.</li>
+    <li><strong>12.</strong> Cape Cod Cornholers' playoff hopes took a hit after dropping a winnable matchup — now Week 14 becomes a true win-and-pray scenario.</li>
+    <li><strong>15.</strong> Team Suckbags collapsed offensively at the worst possible time, posting only 66.2 in a blowout loss.</li>
+    <li><strong>16.</strong> Fourth and Forever showed rare weakness as the #1 seed fell flat — is this simply a late-season nap or something bigger?</li>
+
+    <!-- NEW 10 STORYLINES YOU REQUESTED -->
+    <li><strong>17.</strong> Puka Amon Deez Nuts nearly pulled off a comeback but fell just short as their stars underperformed in a crucial game.</li>
+    <li><strong>18.</strong> CTE Patient posted the week’s lowest score once again, sealing a rough season but still playing spoiler moving forward.</li>
+    <li><strong>19.</strong> Cape Leatherheads kept things respectable early but ultimately couldn’t match the firepower from across the field.</li>
+    <li><strong>20.</strong> Throwbi-Wan Kenobi ran out of Jedi tricks, stumbling through a rough offensive week when they needed magic most.</li>
+    <li><strong>21.</strong> 1bourbon1scotch 1beer escaped with the narrowest win of the season — a razor-thin 1.6-point edge that keeps the playoffs in reach.</li>
+    <li><strong>22.</strong> Show Me Your TD’s got unexpected bench heroics, raising questions about possible lineup regrets heading into Week 14.</li>
+    <li><strong>23.</strong> Team Suckbags’ defense imploded, delivering one of their worst performances of the season in a must-win matchup.</li>
+    <li><strong>24.</strong> Action Jackson’s wide receivers erupted for 55.6 combined, leading all teams and powering their league-high score.</li>
+    <li><strong>25.</strong> Paws Leslie’s midseason slump seems officially over — the offense is humming at the perfect time.</li>
+    <li><strong>26.</strong> The playoff race tightened dramatically, with five teams tied at 6–7 heading into a win-or-go-home Week 14.</li>
+</ul>
+
+<h2>🏆 Team Awards</h2>
+<table>
+<tr><th>Award</th><th>Team</th><th>Points</th></tr>
+<tr><td>📈 High Team</td><td>Action Jackson</td><td>129.3</td></tr>
+<tr><td>📉 Low Team</td><td>CTE Patient</td><td>64.8</td></tr>
+<tr><td>🧨 Biggest Blowout</td><td>Action Jackson over CTE Patient</td><td>64.5</td></tr>
+<tr><td>🔍 Closest Game</td><td>1bourbon1scotch 1beer over Puka Amon Deez Nuts</td><td>1.6</td></tr>
+<tr><td>🍀 Luckiest Win</td><td>1bourbon1scotch 1beer</td><td>89.1</td></tr>
+<tr><td>💔 Tough Loss</td><td>cape cod cornholers</td><td>96.3</td></tr>
+</table>
+
+<h2>📊 Position Leaders (Team Totals)</h2>
+<table>
+<tr><th>Position</th><th>Best</th><th>Worst</th></tr>
+<tr><td>QB</td><td>Hail-Mary Poppins — 29.0</td><td>Action Jackson — 5.7</td></tr>
+<tr><td>RBs</td><td>Throwbi-Wan Kenobi — 39.1</td><td>CTE Patient — 8.4</td></tr>
+<tr><td>WRs</td><td>Action Jackson — 55.6</td><td>Hail-Mary Poppins — 5.1</td></tr>
+<tr><td>TE</td><td>cape cod cornholers — 20.3</td><td>Cape Leatherheads — 3.7</td></tr>
+<tr><td>FLEX</td><td>Paws Leslie — 19.8</td><td>CTE Patient — 1.4</td></tr>
+<tr><td>D/ST</td><td>Fourth and Forever — 27.0</td><td>cape cod cornholers / Puka Amon Deez Nuts — 0.0</td></tr>
+<tr><td>K</td><td>Cape Leatherheads — 19.0</td><td>Team Suckbags — 1.0</td></tr>
+</table>
+
+<h2>🗂 Week 13 Matchup Results</h2>
+<table>
+<tr><th>Winner</th><th>Score</th><th>Loser</th><th>Score</th></tr>
+<tr><td>Action Jackson</td><td>129.3</td><td>CTE Patient</td><td>64.8</td></tr>
+<tr><td>Paws Leslie</td><td>109.3</td><td>Fourth and Forever</td><td>95.5</td></tr>
+<tr><td>Show Me Your TD’s</td><td>109.2</td><td>cape cod cornholers</td><td>96.3</td></tr>
+<tr><td>1bourbon1scotch 1beer</td><td>89.1</td><td>Puka Amon Deez Nuts</td><td>87.5</td></tr>
+<tr><td>Throwbi-Wan Kenobi</td><td>106.8</td><td>Cape Leatherheads</td><td>83.6</td></tr>
+<tr><td>Team Suckbags</td><td>90.2</td><td>Hail-Mary Poppins</td><td>101.0</td></tr>
+</table>
+
+</body>
+</html>
