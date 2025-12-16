@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flaming Sausages Weekly Recap — Week 15</title>
-
   <style>
     :root{
       --bg:#0b1020;
       --card:#121a33;
+      --card2:#0f1730;
       --text:#e9ecff;
       --muted:#aab1d6;
       --line:rgba(255,255,255,.10);
@@ -17,177 +17,327 @@
       --bad:#ffb3b3;
       --warn:#ffd18a;
     }
-
     *{box-sizing:border-box}
-
     body{
       margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(131,99,255,.35), transparent 60%),
-        radial-gradient(900px 500px at 80% 0%, rgba(0,255,214,.18), transparent 55%),
-        radial-gradient(900px 500px at 50% 110%, rgba(255,94,0,.18), transparent 55%),
-        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 15% -10%, rgba(131,99,255,.35), transparent 60%),
+                  radial-gradient(900px 500px at 80% 0%, rgba(0,255,214,.18), transparent 55%),
+                  radial-gradient(900px 500px at 50% 110%, rgba(255,94,0,.18), transparent 55%),
+                  var(--bg);
       color:var(--text);
+      line-height:1.35;
     }
-
-    .wrap{max-width:1100px;margin:auto;padding:28px 18px 40px}
-
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 40px;}
     .banner{
       border:1px solid var(--line);
-      background:linear-gradient(135deg,rgba(131,99,255,.35),rgba(0,255,214,.1),rgba(255,94,0,.12));
+      background: linear-gradient(135deg, rgba(131,99,255,.35), rgba(0,255,214,.10) 45%, rgba(255,94,0,.12));
       border-radius:22px;
-      padding:18px;
+      padding:18px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
     }
-
-    .banner h1{margin:0;font-size:28px}
-    .banner .sub{margin-top:6px;color:var(--muted)}
-
-    .grid{display:grid;gap:14px;margin-top:16px}
-    @media(min-width:900px){.cols2{grid-template-columns:1fr 1fr}}
-
+    .banner h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:.2px;
+    }
+    .banner .sub{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .grid{display:grid;gap:14px;margin-top:16px;}
+    @media(min-width:920px){ .grid.cols2{grid-template-columns:1fr 1fr;} }
     .card{
       border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
       border-radius:18px;
-      padding:14px;
-      background:rgba(255,255,255,.03);
+      padding:14px 14px;
     }
-
-    h2{margin:0 0 10px 0;font-size:16px}
-
+    .card h2{
+      margin:0 0 10px 0;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
     .pill{
       display:inline-block;
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid var(--line);
       background:var(--pill);
+      border:1px solid var(--line);
+      color:var(--muted);
       font-size:12px;
-      margin:4px 6px 0 0;
+      margin-right:8px;
+      margin-top:6px;
+      white-space:nowrap;
     }
-
+    .pill.good{color:var(--good)}
+    .pill.bad{color:var(--bad)}
+    .pill.warn{color:var(--warn)}
+    .matchup{
+      display:flex;justify-content:space-between;gap:10px;
+      padding:10px 10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background: rgba(0,0,0,.18);
+      margin-top:10px;
+    }
+    .m-left{min-width:0}
+    .m-title{font-weight:700}
+    .m-note{color:var(--muted);font-size:12px;margin-top:4px}
+    .m-score{font-weight:800;font-variant-numeric: tabular-nums;}
     .table{
       width:100%;
       border-collapse:collapse;
-      border:1px solid var(--line);
-      border-radius:14px;
-      overflow:hidden;
       font-size:13px;
-    }
-
-    th,td{
-      padding:10px;
-      border-bottom:1px solid var(--line);
-      text-align:left;
-    }
-
-    th{color:var(--muted);background:rgba(255,255,255,.04)}
-    tr:last-child td{border-bottom:none}
-
-    .matchup{
-      display:flex;
-      justify-content:space-between;
-      padding:10px;
-      border:1px solid var(--line);
+      overflow:hidden;
       border-radius:14px;
-      margin-top:8px;
-    }
-
-    .tag{
-      font-size:11px;
       border:1px solid var(--line);
-      border-radius:999px;
-      padding:2px 8px;
-      margin-left:6px;
-      color:var(--muted);
     }
-
+    .table th,.table td{
+      padding:10px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    .table th{color:var(--muted);text-align:left;font-weight:650;background:rgba(255,255,255,.03)}
+    .table tr:last-child td{border-bottom:none}
     .muted{color:var(--muted)}
     .kicker{font-size:12px;color:var(--muted);margin-top:10px}
+    .story p{margin:0 0 10px 0}
+    .story p:last-child{margin-bottom:0}
+    .mini{font-size:12px;color:var(--muted)}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);margin-left:8px;font-size:11px;color:var(--muted)}
   </style>
 </head>
-
 <body>
-<div class="wrap">
-
-  <div class="banner">
-    <h1>🔥 Flaming Sausages Weekly Recap — Week 15</h1>
-    <div class="sub">Playoffs • Round 1 • Two byes • Maximum regret</div>
-  </div>
-
-  <!-- STORYLINES -->
-  <div class="grid cols2">
-    <div class="card">
-      <h2>📚 Storylines of the Week</h2>
-      <p><strong>Cape Leatherheads</strong> dropped the week’s high score (132.0) just to remind everyone that consolation still matters.</p>
-      <p><strong>Team Suckbags</strong> advanced with the lowest winning score and absolutely does not care.</p>
-      <p><strong>Action Jackson</strong> and <strong>Paws Leslie</strong> both lost while their benches exploded.</p>
-      <p><strong>Puka Amon Deez Nuts</strong> rode Amon-Ra’s 34.9 straight into Round 2.</p>
-      <p class="muted">Byes: Fourth and Forever (89.3) • Hail-Mary Poppins (125.6)</p>
+  <div class="wrap">
+    <div class="banner">
+      <h1>🔥 Flaming Sausages Weekly Recap — Week 15</h1>
+      <div class="sub">Playoffs, Round 1 • Two byes • One week of glory, one week of “why did I start him?”</div>
     </div>
 
-    <div class="card">
-      <h2>🏆 Weekly Superlatives</h2>
-      <div class="pill">Highest Score: Cape Leatherheads (132.0)</div>
-      <div class="pill">Luckiest Win: Team Suckbags (108.4)</div>
-      <div class="pill">Lowest Score: Action Jackson (84.6)</div>
-      <div class="pill">Toughest Loss: CTE Patient (124.3)</div>
+    <div class="grid cols2">
+      <div class="card story">
+        <h2>📚 Storylines of the Week</h2>
+        <p><strong>Cape Leatherheads</strong> dropped the week’s high score (132.0) to remind everyone that the consolation bracket can still be loud.</p>
+        <p><strong>Team Suckbags</strong> advanced with the lowest winning score (108.4)… and they won’t apologize for it.</p>
+        <p><strong>Action Jackson</strong> and <strong>Paws Leslie</strong> both lived the same nightmare: the bench went off, the starters didn’t.</p>
+        <p><strong>Puka Amon Deez Nuts</strong> came out firing behind Amon-Ra’s 34.9 and punched a ticket forward.</p>
+        <p class="mini">Byes: <strong>Fourth and Forever</strong> (89.3) • <strong>Hail-Mary Poppins</strong> (125.6)</p>
+      </div>
+
+      <div class="card">
+        <h2>🏆 Weekly Superlatives</h2>
+        <div class="pill good"><strong>Highest Score:</strong> Cape Leatherheads — 132.0</div>
+        <div class="pill warn"><strong>Luckiest Win:</strong> Team Suckbags — 108.4</div>
+        <div class="pill bad"><strong>Lowest Score:</strong> Action Jackson — 84.6</div>
+        <div class="pill warn"><strong>Toughest Loss:</strong> CTE Patient — 124.3</div>
+        <div class="kicker">Rules: <em>Luckiest Win</em> = lowest winning score. <em>Toughest Loss</em> = highest losing score.</div>
+      </div>
     </div>
+
+    <div class="grid cols2">
+      <div class="card">
+        <h2>🏟️ Winner’s Bracket</h2>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Puka Amon Deez Nuts <span class="tag">ADVANCES</span></div>
+            <div class="m-note">Amon-Ra (34.9), Goff (25.0), Nacua (23.4)</div>
+          </div>
+          <div class="m-score">128.9 — 116.7</div>
+        </div>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Team Suckbags <span class="tag">ADVANCES</span></div>
+            <div class="m-note">Henderson (29.1) + Fairbairn (17.0) carried a wild build</div>
+          </div>
+          <div class="m-score">108.4 — 84.6</div>
+        </div>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Fourth and Forever <span class="tag">BYE</span></div>
+            <div class="m-note">Rested up and watching the chaos</div>
+          </div>
+          <div class="m-score">89.3</div>
+        </div>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Hail-Mary Poppins <span class="tag">BYE</span></div>
+            <div class="m-note">Playoff bye with a casual 125.6 on the board</div>
+          </div>
+          <div class="m-score">125.6</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🪜 Consolation Ladder</h2>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Show Me Your TD’s <span class="tag">SURVIVES</span></div>
+            <div class="m-note">Cook (30.1), Jameson (22.9), Schultz (17.6) — even with a K goose egg</div>
+          </div>
+          <div class="m-score">124.1 — 111.0</div>
+        </div>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Throwbi-Wan Kenobi <span class="tag">SURVIVES</span></div>
+            <div class="m-note">Bo Nix (29.0) led the way; survived a –1.0 D/ST</div>
+          </div>
+          <div class="m-score">119.4 — 94.4</div>
+        </div>
+
+        <div class="matchup">
+          <div class="m-left">
+            <div class="m-title">Cape Leatherheads <span class="tag">SURVIVES</span></div>
+            <div class="m-note">Myers (24.0) + Goedert (22.0) + Purdy (25.4) = points everywhere</div>
+          </div>
+          <div class="m-score">132.0 — 124.3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h2>⭐ Position Best & Worst (Starters Only)</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Best</th>
+            <th>Worst</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>QB</strong></td>
+            <td>Throwbi-Wan Kenobi — <strong>29.0</strong> (Bo Nix)</td>
+            <td>Paws Leslie — <strong>5.5</strong> (Joe Burrow)</td>
+          </tr>
+          <tr>
+            <td><strong>RB (RB1+RB2)</strong></td>
+            <td>Show Me Your TD’s — <strong>37.7</strong> (Cook 30.1 + Irving 7.6)</td>
+            <td>Paws Leslie — <strong>9.4</strong> (Jeanty 6.2 + Judkins 3.2)</td>
+          </tr>
+          <tr>
+            <td><strong>WR (WR1+WR2)</strong></td>
+            <td>Puka Amon Deez Nuts — <strong>39.7</strong> (St. Brown 34.9 + Pickens 4.8)</td>
+            <td>Action Jackson — <strong>19.7</strong> (A.J. Brown 11.1 + Rice 8.6)</td>
+          </tr>
+          <tr>
+            <td><strong>TE</strong></td>
+            <td>Cape Leatherheads — <strong>22.0</strong> (Dallas Goedert)</td>
+            <td>1bourbon1scotch 1beer — <strong>3.4</strong> (Tyler Warren)</td>
+          </tr>
+          <tr>
+            <td><strong>FLEX</strong></td>
+            <td>CTE Patient — <strong>30.0</strong> (Travis Etienne Jr.)</td>
+            <td>1bourbon1scotch 1beer — <strong>3.3</strong> (Kyle Monangai)</td>
+          </tr>
+          <tr>
+            <td><strong>D/ST</strong></td>
+            <td>1bourbon1scotch 1beer — <strong>17.0</strong> (Bears D/ST)</td>
+            <td>Action Jackson — <strong>0.0</strong> (Cowboys D/ST)</td>
+          </tr>
+          <tr>
+            <td><strong>K</strong></td>
+            <td>Cape Leatherheads — <strong>24.0</strong> (Jason Myers)</td>
+            <td>Show Me Your TD’s — <strong>0.0</strong> (Evan McPherson)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="kicker">Computed from Week 15 <em>starting lineups only</em>. RB and WR values are combined starter totals.</div>
+    </div>
+
+    <div class="grid cols2">
+      <div class="card">
+        <h2>🧨 Luckiest Win: Team Suckbags (108.4)</h2>
+        <p class="muted">Lowest winning score of the week — but a W is a W in the playoffs.</p>
+        <p><strong>What happened:</strong> Henderson (29.1) and Fairbairn (17.0) did the heavy lifting while the rest of the lineup mostly tried to stay out of the way.</p>
+        <p><strong>Meanwhile…</strong> Action Jackson’s starters face-planted, even though the bench had a full-blown party (more below).</p>
+      </div>
+
+      <div class="card">
+        <h2>💀 Toughest Loss: CTE Patient (124.3)</h2>
+        <p class="muted">Highest losing score of Week 15 — the fantasy equivalent of losing 38–35.</p>
+        <p><strong>What happened:</strong> Etienne (30.0) and Tracy (23.2) were huge, but too many soft spots (Allgeier 1.8, Jefferson 3.2) opened the door.</p>
+        <p><strong>And then…</strong> Cape Leatherheads answered with points at QB/TE/K and just never let up.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h2>🧾 Team Capsules</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Score</th>
+            <th>Snapshot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Puka Amon Deez Nuts</strong></td>
+            <td>128.9</td>
+            <td>Amon-Ra (34.9) was the week’s loudest WR, with Goff + Nacua stacking points on top.</td>
+          </tr>
+          <tr>
+            <td><strong>Cape Cod Cornholers</strong></td>
+            <td>116.7</td>
+            <td>Bijan (25.5) showed up, but too many “fine” games and not enough ceiling to match PADN’s firepower.</td>
+          </tr>
+          <tr>
+            <td><strong>Team Suckbags</strong></td>
+            <td>108.4</td>
+            <td>Henderson and Fairbairn dragged the lineup across the finish line — and it still counts.</td>
+          </tr>
+          <tr>
+            <td><strong>Action Jackson</strong></td>
+            <td>84.6</td>
+            <td>Starter collapse plus a Cowboys D/ST goose egg… while <strong>Kyle Pitts (40.1)</strong> watched from the bench.</td>
+          </tr>
+          <tr>
+            <td><strong>Show Me Your TD’s</strong></td>
+            <td>124.1</td>
+            <td>Cook (30.1) and Jameson (22.9) powered through even with a zero from the kicker spot.</td>
+          </tr>
+          <tr>
+            <td><strong>1bourbon1scotch 1beer</strong></td>
+            <td>111.0</td>
+            <td>Maye + Jacobs + Bears D/ST kept it alive, but the starters didn’t have enough extra gear.</td>
+          </tr>
+          <tr>
+            <td><strong>Throwbi-Wan Kenobi</strong></td>
+            <td>119.4</td>
+            <td>Bo Nix (29.0) set the tone — and somehow they still won with a –1.0 defense.</td>
+          </tr>
+          <tr>
+            <td><strong>Paws Leslie</strong></td>
+            <td>94.4</td>
+            <td>Bench points everywhere (Swift 22.1, Parkinson 22.0, Jennings 17.2)… starters almost nowhere.</td>
+          </tr>
+          <tr>
+            <td><strong>Cape Leatherheads</strong></td>
+            <td>132.0</td>
+            <td>Week high: Purdy (25.4), Goedert (22.0), Kyren (21.3), and Myers (24.0) was a cheat code.</td>
+          </tr>
+          <tr>
+            <td><strong>CTE Patient</strong></td>
+            <td>124.3</td>
+            <td>Etienne (30.0) nearly stole it — but a couple low outputs turned “great score” into “toughest loss.”</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="kicker">Want me to add a “Next Week Matchups / Bracket Outlook” block? Say the word and tell me who plays who in Round 2.</div>
+    </div>
+
+    <div class="kicker">Flaming Sausages Weekly Recap • Week 15 • Generated from your ESPN box-score text</div>
   </div>
-
-  <!-- POSITION BEST / WORST -->
-  <div class="card" style="margin-top:14px">
-    <h2>⭐ Position Best & Worst (Starters Only)</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Best</th>
-          <th>Worst</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>QB</strong></td>
-          <td>Throwbi-Wan Kenobi — <strong>29.0</strong> (Bo Nix)</td>
-          <td>Paws Leslie — <strong>5.5</strong> (Joe Burrow)</td>
-        </tr>
-        <tr>
-          <td><strong>RB (RB1+RB2)</strong></td>
-          <td>Show Me Your TD’s — <strong>37.7</strong></td>
-          <td>Paws Leslie — <strong>9.4</strong></td>
-        </tr>
-        <tr>
-          <td><strong>WR (WR1+WR2)</strong></td>
-          <td>Puka Amon Deez Nuts — <strong>39.7</strong></td>
-          <td>Action Jackson — <strong>19.7</strong></td>
-        </tr>
-        <tr>
-          <td><strong>TE</strong></td>
-          <td>Cape Leatherheads — <strong>22.0</strong></td>
-          <td>1bourbon1scotch 1beer — <strong>3.4</strong></td>
-        </tr>
-        <tr>
-          <td><strong>FLEX</strong></td>
-          <td>CTE Patient — <strong>30.0</strong></td>
-          <td>1bourbon1scotch 1beer — <strong>3.3</strong></td>
-        </tr>
-        <tr>
-          <td><strong>D/ST</strong></td>
-          <td>1bourbon1scotch 1beer — <strong>17.0</strong></td>
-          <td>Action Jackson — <strong>0.0</strong></td>
-        </tr>
-        <tr>
-          <td><strong>K</strong></td>
-          <td>Cape Leatherheads — <strong>24.0</strong></td>
-          <td>Show Me Your TD’s — <strong>0.0</strong></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="kicker">Computed from Week 15 starting lineups only</div>
-  </div>
-
-  <div class="kicker">Flaming Sausages Weekly Recap • Week 15</div>
-
-</div>
 </body>
 </html>
