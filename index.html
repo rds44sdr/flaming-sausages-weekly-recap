@@ -1,97 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Flaming Sausages Weekly Recap – Week 14</title>
-<style>
-    body { font-family: Arial, sans-serif; background: #fafafa; padding: 20px; line-height: 1.5; }
-    h1 { text-align: center; margin-bottom: 5px; }
-    h2 { margin-top: 30px; border-bottom: 2px solid #ddd; padding-bottom: 4px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
-    th { background: #f0f0f0; }
-    ul { margin-top: 8px; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flaming Sausages Weekly Recap — Week 15</title>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#e9ecff;
+      --muted:#aab1d6;
+      --line:rgba(255,255,255,.10);
+      --pill:rgba(255,255,255,.08);
+      --good:#9ef0c2;
+      --bad:#ffb3b3;
+      --warn:#ffd18a;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(131,99,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 80% 0%, rgba(0,255,214,.18), transparent 55%),
+        radial-gradient(900px 500px at 50% 110%, rgba(255,94,0,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{max-width:1100px;margin:auto;padding:28px 18px 40px}
+
+    .banner{
+      border:1px solid var(--line);
+      background:linear-gradient(135deg,rgba(131,99,255,.35),rgba(0,255,214,.1),rgba(255,94,0,.12));
+      border-radius:22px;
+      padding:18px;
+    }
+
+    .banner h1{margin:0;font-size:28px}
+    .banner .sub{margin-top:6px;color:var(--muted)}
+
+    .grid{display:grid;gap:14px;margin-top:16px}
+    @media(min-width:900px){.cols2{grid-template-columns:1fr 1fr}}
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px;
+      background:rgba(255,255,255,.03);
+    }
+
+    h2{margin:0 0 10px 0;font-size:16px}
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:var(--pill);
+      font-size:12px;
+      margin:4px 6px 0 0;
+    }
+
+    .table{
+      width:100%;
+      border-collapse:collapse;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      font-size:13px;
+    }
+
+    th,td{
+      padding:10px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+    }
+
+    th{color:var(--muted);background:rgba(255,255,255,.04)}
+    tr:last-child td{border-bottom:none}
+
+    .matchup{
+      display:flex;
+      justify-content:space-between;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      margin-top:8px;
+    }
+
+    .tag{
+      font-size:11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:2px 8px;
+      margin-left:6px;
+      color:var(--muted);
+    }
+
+    .muted{color:var(--muted)}
+    .kicker{font-size:12px;color:var(--muted);margin-top:10px}
+  </style>
 </head>
+
 <body>
+<div class="wrap">
 
-<h1>════🎯 Week 14: Cornholers Rise, Suckbags Surge, Brackets Set 🎯 ════</h1>
+  <div class="banner">
+    <h1>🔥 Flaming Sausages Weekly Recap — Week 15</h1>
+    <div class="sub">Playoffs • Round 1 • Two byes • Maximum regret</div>
+  </div>
 
-<h2>📚 Storylines of the Week</h2>
-<ul>
-    <li><strong>cape cod cornholers delivered their best timing of the year, erupting for 138.9 and punching a playoff ticket in the final week.</strong></li>
-    <li><strong>Team Suckbags stormed into the postseason, leaning on Christian Watson and Harold Fannin Jr. for a decisive qualifying win.</strong></li>
-    <li><strong>Show Me Your TD’s put up their strongest game in weeks, but heartbreaking tiebreakers still kept them just outside the playoff field.</strong></li>
-    <li><strong>Puka Amon Deez Nuts put up a huge 117-point performance but ran into a red-hot Fourth and Forever, turning a great week into a bitter loss.</strong></li>
-    <li><strong>Fourth and Forever bounced back with authority, powered by Josh Allen’s 37.8 to secure the #1 seed and momentum.</strong></li>
-    <li><strong>Action Jackson won without fireworks, grinding out a steady 99.7 that cemented their position as the #3 playoff seed.</strong></li>
-    <li><strong>1bourbon1scotch 1beer stumbled at the worst possible moment, scoring just 65.1 and falling out of contention due to tiebreakers.</strong></li>
-    <li><strong>Paws Leslie faded late, unable to match Team Suckbags in a must-win scenario.</strong></li>
-    <li><strong>CTE Patient closed the year with another rough outing, scoring 69.4 and ending the season on a cold streak.</strong></li>
-    <li><strong>Hail-Mary Poppins took a close loss despite strong RB play, but their playoff bye was never in doubt.</strong></li>
-</ul>
+  <!-- STORYLINES -->
+  <div class="grid cols2">
+    <div class="card">
+      <h2>📚 Storylines of the Week</h2>
+      <p><strong>Cape Leatherheads</strong> dropped the week’s high score (132.0) just to remind everyone that consolation still matters.</p>
+      <p><strong>Team Suckbags</strong> advanced with the lowest winning score and absolutely does not care.</p>
+      <p><strong>Action Jackson</strong> and <strong>Paws Leslie</strong> both lost while their benches exploded.</p>
+      <p><strong>Puka Amon Deez Nuts</strong> rode Amon-Ra’s 34.9 straight into Round 2.</p>
+      <p class="muted">Byes: Fourth and Forever (89.3) • Hail-Mary Poppins (125.6)</p>
+    </div>
 
-<h2>🏆 Team Awards</h2>
-<table>
-<tr><th>Award</th><th>Team</th><th>Points</th></tr>
-<tr><td>📈 High Team</td><td>cape cod cornholers</td><td>138.9</td></tr>
-<tr><td>📉 Low Team</td><td>1bourbon1scotch 1beer</td><td>65.1</td></tr>
-<tr><td>🧨 Biggest Blowout</td><td>cape cod cornholers over CTE Patient</td><td>69.5</td></tr>
-<tr><td>🔍 Closest Game</td><td>Fourth and Forever over Puka Amon Deez Nuts</td><td>6.1</td></tr>
-<tr><td>🍀 Luckiest Win</td><td>Action Jackson</td><td>99.7</td></tr>
-<tr><td>💔 Tough Loss</td><td>Puka Amon Deez Nuts</td><td>117.0</td></tr>
-</table>
+    <div class="card">
+      <h2>🏆 Weekly Superlatives</h2>
+      <div class="pill">Highest Score: Cape Leatherheads (132.0)</div>
+      <div class="pill">Luckiest Win: Team Suckbags (108.4)</div>
+      <div class="pill">Lowest Score: Action Jackson (84.6)</div>
+      <div class="pill">Toughest Loss: CTE Patient (124.3)</div>
+    </div>
+  </div>
 
-<h2>📊 Position Leaders (Team Totals)</h2>
-<table>
-<tr><th>Position</th><th>Best</th><th>Worst</th></tr>
-<tr>
-  <td>QB</td>
-  <td>Fourth and Forever — 37.8</td>
-  <td>CTE Patient — -0.2</td>
-</tr>
-<tr>
-  <td>RBs</td>
-  <td>Hail-Mary Poppins — 47.2</td>
-  <td>Team Suckbags — 12.3</td>
-</tr>
-<tr>
-  <td>WRs</td>
-  <td>cape cod cornholers — 50.0</td>
-  <td>CTE Patient — 6.6</td>
-</tr>
-<tr>
-  <td>TE</td>
-  <td>Team Suckbags — 21.4</td>
-  <td>Puka Amon Deez Nuts — 1.3</td>
-</tr>
-<tr>
-  <td>FLEX</td>
-  <td>Puka Amon Deez Nuts — 32.2</td>
-  <td>Paws Leslie — 4.8</td>
-</tr>
-<tr>
-  <td>D/ST</td>
-  <td>Fourth and Forever — 18.0</td>
-  <td>Cape Leatherheads — 0.0</td>
-</tr>
-<tr>
-  <td>K</td>
-  <td>Throwbi-Wan Kenobi — 23.0</td>
-  <td>cape cod cornholers — 3.0</td>
-</tr>
-</table>
+  <!-- POSITION BEST / WORST -->
+  <div class="card" style="margin-top:14px">
+    <h2>⭐ Position Best & Worst (Starters Only)</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Best</th>
+          <th>Worst</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>QB</strong></td>
+          <td>Throwbi-Wan Kenobi — <strong>29.0</strong> (Bo Nix)</td>
+          <td>Paws Leslie — <strong>5.5</strong> (Joe Burrow)</td>
+        </tr>
+        <tr>
+          <td><strong>RB (RB1+RB2)</strong></td>
+          <td>Show Me Your TD’s — <strong>37.7</strong></td>
+          <td>Paws Leslie — <strong>9.4</strong></td>
+        </tr>
+        <tr>
+          <td><strong>WR (WR1+WR2)</strong></td>
+          <td>Puka Amon Deez Nuts — <strong>39.7</strong></td>
+          <td>Action Jackson — <strong>19.7</strong></td>
+        </tr>
+        <tr>
+          <td><strong>TE</strong></td>
+          <td>Cape Leatherheads — <strong>22.0</strong></td>
+          <td>1bourbon1scotch 1beer — <strong>3.4</strong></td>
+        </tr>
+        <tr>
+          <td><strong>FLEX</strong></td>
+          <td>CTE Patient — <strong>30.0</strong></td>
+          <td>1bourbon1scotch 1beer — <strong>3.3</strong></td>
+        </tr>
+        <tr>
+          <td><strong>D/ST</strong></td>
+          <td>1bourbon1scotch 1beer — <strong>17.0</strong></td>
+          <td>Action Jackson — <strong>0.0</strong></td>
+        </tr>
+        <tr>
+          <td><strong>K</strong></td>
+          <td>Cape Leatherheads — <strong>24.0</strong></td>
+          <td>Show Me Your TD’s — <strong>0.0</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="kicker">Computed from Week 15 starting lineups only</div>
+  </div>
 
-<h2>🗂 Week 14 Matchup Results</h2>
-<table>
-<tr><th>Winner</th><th>Score</th><th>Loser</th><th>Score</th></tr>
-<tr><td>cape cod cornholers</td><td>138.9</td><td>CTE Patient</td><td>69.4</td></tr>
-<tr><td>Show Me Your TD’s</td><td>115.4</td><td>Hail-Mary Poppins</td><td>105.0</td></tr>
-<tr><td>Team Suckbags</td><td>111.7</td><td>Paws Leslie</td><td>87.0</td></tr>
-<tr><td>Fourth and Forever</td><td>123.1</td><td>Puka Amon Deez Nuts</td><td>117.0</td></tr>
-<tr><td>Action Jackson</td><td>99.7</td><td>Cape Leatherheads</td><td>92.2</td></tr>
-<tr><td>Throwbi-Wan Kenobi</td><td>100.5</td><td>1bourbon1scotch 1beer</td><td>65.1</td></tr>
-</table>
+  <div class="kicker">Flaming Sausages Weekly Recap • Week 15</div>
 
+</div>
 </body>
 </html>
