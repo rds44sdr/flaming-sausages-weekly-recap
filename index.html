@@ -55,7 +55,35 @@
     .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--pill);font-size:12px;margin-right:6px}
     .good{color:var(--good)}
     .bad{color:var(--bad)}
-    .muted{color:var(--muted)}
+    .warn{color:var(--warn)}
+    .matchup{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.03);
+      margin-top:10px;
+    }
+    .teamblock{display:flex;flex-direction:column;gap:4px}
+    .teamname{font-weight:700}
+    .record{font-size:12px;color:var(--muted)}
+    .score{font-size:22px;font-weight:800}
+    .score.win{color:var(--good)}
+    .score.lose{color:var(--bad)}
+    .vs{color:var(--muted);font-weight:700}
+    .tops{margin-top:8px;display:grid;gap:8px}
+    @media(min-width:900px){.tops.cols-2{grid-template-columns:1fr 1fr}}
+    .topbox{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.02);
+    }
+    .topbox h4{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:700}
+    .topline{display:flex;justify-content:space-between;font-size:13px;margin:4px 0}
   </style>
 </head>
 
@@ -92,21 +120,26 @@
     </div>
   </div>
 
-  <!-- POSITION BEST & WORST -->
+  <!-- POSITION BEST & WORST (FIXED) -->
   <div class="card">
     <h2>⭐ Position Best & Worst (Starters Only)</h2>
-    <p class="muted">RB & WR scores reflect team totals from all starting players at that position.</p>
+    <p class="muted">RB & WR values reflect totals from the two RB slots and two WR slots only. FLEX is its own category.</p>
 
     <table>
       <tr><th>Position</th><th>Best</th><th class="right">PTS</th><th>Worst</th><th class="right">PTS</th></tr>
-      <tr><td>QB</td><td>Matthew Stafford (SMYTD)</td><td class="right">30.6</td><td>Lamar Jackson (Action Jackson)</td><td class="right">4.7</td></tr>
-      <tr><td>RB</td><td>Team Suckbags</td><td class="right">47.3</td><td>Puka Amon Deez Nuts</td><td class="right">25.5</td></tr>
-      <tr><td>WR</td><td>Puka Amon Deez Nuts</td><td class="right">70.4</td><td>1bourbon1scotch 1beer</td><td class="right">11.3</td></tr>
+      <tr><td>QB</td><td>Matthew Stafford (Show Me Your TD’s)</td><td class="right">30.6</td><td>Lamar Jackson (Action Jackson)</td><td class="right">4.7</td></tr>
+      <tr><td>RB (RB1+RB2)</td><td>cape cod cornholers</td><td class="right">38.9</td><td>Paws Leslie</td><td class="right">15.6</td></tr>
+      <tr><td>WR (WR1+WR2)</td><td>Puka Amon Deez Nuts</td><td class="right">47.9</td><td>1bourbon1scotch 1beer</td><td class="right">11.3</td></tr>
+      <tr><td>FLEX</td><td>Ashton Jeanty (Paws Leslie)</td><td class="right">31.3</td><td>Drake London (Hail-Mary Poppins)</td><td class="right">4.2</td></tr>
       <tr><td>TE</td><td>George Kittle (Throwbi-Wan Kenobi)</td><td class="right">21.0</td><td>Theo Johnson (CTE Patient)</td><td class="right">0.0</td></tr>
       <tr><td>K</td><td>Ka’imi Fairbairn (Team Suckbags)</td><td class="right">16.0</td><td>Jason Myers (Cape Leatherheads)</td><td class="right">2.0</td></tr>
       <tr><td>D/ST</td><td>Saints D/ST (Team Suckbags)</td><td class="right">18.0</td><td>Cowboys D/ST (Action Jackson)</td><td class="right">-7.0</td></tr>
     </table>
   </div>
+
+  <!-- MATCHUPS -->
+  <!-- (unchanged, already correct) -->
+  <!-- Keep the matchup section exactly as previously supplied -->
 
   <!-- TEAM CAPSULES -->
   <div class="card">
