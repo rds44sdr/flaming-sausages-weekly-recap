@@ -46,6 +46,8 @@
       padding:14px 16px;
       margin-bottom:12px;
     }
+    .grid{display:grid;gap:12px}
+    @media(min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
     table{width:100%;border-collapse:collapse}
     th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
     th{color:var(--muted);font-weight:600}
@@ -54,9 +56,11 @@
     .good{color:var(--good)}
     .bad{color:var(--bad)}
     .warn{color:var(--warn)}
+    .muted{color:var(--muted)}
+
     .matchup{
       display:grid;
-      grid-template-columns:1fr auto 1fr;
+      grid-template-columns: 1fr auto 1fr;
       gap:10px;
       align-items:center;
       padding:10px 12px;
@@ -65,22 +69,29 @@
       background:rgba(255,255,255,.03);
       margin-top:10px;
     }
-    .teamname{font-weight:700}
+    .teamblock{display:flex;flex-direction:column;gap:4px}
+    .teamname{font-weight:700;color:var(--text)}
     .record{font-size:12px;color:var(--muted)}
     .score{font-size:22px;font-weight:800}
-    .win{color:var(--good)}
-    .lose{color:var(--bad)}
+    .score.win{color:var(--good)}
+    .score.lose{color:var(--bad)}
     .vs{color:var(--muted);font-weight:700}
-    .tops{margin-top:8px;display:grid;gap:8px}
-    @media(min-width:900px){.tops{grid-template-columns:1fr 1fr}}
+
+    .tops{
+      margin-top:8px;
+      display:grid;
+      gap:8px;
+    }
+    @media(min-width:900px){.tops.cols-2{grid-template-columns:1fr 1fr}}
     .topbox{
       border:1px solid var(--line);
       border-radius:12px;
       padding:10px 12px;
       background:rgba(255,255,255,.02);
     }
-    .topbox h4{margin:0 0 6px;font-size:13px;color:var(--muted)}
-    .topline{display:flex;justify-content:space-between;font-size:13px;margin:4px 0}
+    .topbox h4{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.2px}
+    .topline{display:flex;justify-content:space-between;gap:10px;color:var(--text);font-size:13px;margin:4px 0}
+    .topline span:last-child{color:var(--muted)}
   </style>
 </head>
 
@@ -93,28 +104,35 @@
     <div class="muted">Playoffs • Round 2 • NFL Week 16</div>
   </div>
 
-  <!-- STORYLINES -->
+  <!-- STORYLINES (1–4) -->
   <div class="card">
     <h2>📚 Storylines of the Week</h2>
-    <p><strong>Puka Amon Deez Nuts delivered the week’s statement performance</strong>, posting the highest score of the playoffs and ending the matchup early.</p>
-    <p><strong>Fourth and Forever learned the hard way that byes offer no protection</strong>, exiting with the lowest score of the round.</p>
-    <p><strong>Team Suckbags embraced chaos and survived</strong>, riding McCaffrey and a dominant Saints D/ST.</p>
-    <p><strong>Hail-Mary Poppins never recovered from early misses</strong> and faded quietly out of contention.</p>
+    <p><strong>Puka Amon Deez Nuts delivered the week’s statement performance</strong>, posting the high score of the round and ending the debate early.</p>
+    <p><strong>Fourth and Forever learned the hard way that a bye doesn’t guarantee safety</strong>, getting bounced when Josh Allen face-planted at the worst possible moment.</p>
+    <p><strong>Team Suckbags embraced chaos and survived</strong>, riding Christian McCaffrey and a massive Saints D/ST to advance.</p>
+    <p><strong>Hail-Mary Poppins never recovered from early underperformances</strong>, watching a strong season stall out when it mattered most.</p>
   </div>
 
-  <!-- SUPERLATIVES -->
+  <!-- SUPERLATIVES (FIXED) -->
   <div class="card">
     <h2>🏆 Weekly Superlatives</h2>
-    <p><span class="pill">Highest Score</span> <strong>Puka Amon Deez Nuts</strong> — <span class="good">136.9</span></p>
-    <p><span class="pill">Luckiest Win</span> <strong>Show Me Your TD’s</strong> — <span class="warn">112.9</span></p>
-    <p><span class="pill">Lowest Score</span> <strong>Fourth and Forever</strong> — <span class="bad">86.8</span></p>
-    <p><span class="pill">Toughest Loss</span> <strong>CTE Patient</strong> — <span class="bad">111.5</span></p>
+    <div class="grid cols-2">
+      <div>
+        <p><span class="pill">Highest Score</span> <strong>Puka Amon Deez Nuts</strong> — <span class="good">136.9</span></p>
+        <p><span class="pill">Luckiest Win</span> <strong>cape cod cornholers</strong> — <span class="warn">108.2</span></p>
+      </div>
+      <div>
+        <p><span class="pill">Lowest Score</span> <strong>Action Jackson</strong> — <span class="bad">71.3</span></p>
+        <p><span class="pill">Toughest Loss</span> <strong>CTE Patient</strong> — <span class="bad">111.5</span></p>
+      </div>
+    </div>
   </div>
 
-  <!-- POSITION BEST & WORST -->
+  <!-- POSITION BEST & WORST (RB/WR = 2 SLOTS ONLY, FLEX SEPARATE) -->
   <div class="card">
     <h2>⭐ Position Best & Worst (Starters Only)</h2>
-    <p class="muted">RB & WR totals reflect only the two starting slots. FLEX is its own category.</p>
+    <p class="muted">RB &amp; WR totals reflect only the two starting slots. FLEX is its own category.</p>
+
     <table>
       <tr><th>Position</th><th>Best</th><th class="right">PTS</th><th>Worst</th><th class="right">PTS</th></tr>
       <tr><td>QB</td><td>Matthew Stafford (Show Me Your TD’s)</td><td class="right">30.6</td><td>Lamar Jackson (Action Jackson)</td><td class="right">4.7</td></tr>
@@ -127,15 +145,21 @@
     </table>
   </div>
 
-  <!-- RESULTS -->
+  <!-- RESULTS SUMMARY -->
   <div class="card">
     <h2>✅ Results</h2>
 
     <h3>Winner’s Bracket</h3>
     <table>
       <tr><th>Winner</th><th>Score</th><th>Loser</th><th class="right">Score</th></tr>
-      <tr><td><strong>Puka Amon Deez Nuts</strong></td><td>136.9</td><td>Fourth and Forever</td><td class="right">86.8</td></tr>
-      <tr><td><strong>Team Suckbags</strong></td><td>121.1</td><td>Hail-Mary Poppins</td><td class="right">80.7</td></tr>
+      <tr>
+        <td><strong>Puka Amon Deez Nuts</strong></td><td>136.9</td>
+        <td>Fourth and Forever</td><td class="right">86.8</td>
+      </tr>
+      <tr>
+        <td><strong>Team Suckbags</strong></td><td>121.1</td>
+        <td>Hail-Mary Poppins</td><td class="right">80.7</td>
+      </tr>
     </table>
 
     <h3>Consolation Ladder</h3>
@@ -152,24 +176,238 @@
   <div class="card">
     <h2>📌 Matchups</h2>
     <p class="muted">Playoff Round 2 (NFL Week 16)</p>
-    <!-- Detailed matchup blocks already validated -->
+
+    <h3>Winner’s Bracket</h3>
+
+    <!-- PADN vs Fourth and Forever -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">Puka Amon Deez Nuts</div>
+        <div class="record">(8-6-0, 4th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">Fourth and Forever</div>
+        <div class="record">(12-2-0, 1st)</div>
+      </div>
+
+      <div class="score win">136.9</div>
+      <div></div>
+      <div class="score lose" style="text-align:right">86.8</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — PADN</h4>
+        <div class="topline"><span>Puka Nacua</span><span>40.5</span></div>
+        <div class="topline"><span>Jared Goff</span><span>25.9</span></div>
+        <div class="topline"><span>George Pickens</span><span>22.5</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — Fourth and Forever</h4>
+        <div class="topline"><span>Jaxon Smith-Njigba</span><span>19.6</span></div>
+        <div class="topline"><span>Jonathan Taylor</span><span>15.4</span></div>
+        <div class="topline"><span>Hunter Henry</span><span>12.5</span></div>
+      </div>
+    </div>
+
+    <!-- Team Suckbags vs Hail-Mary Poppins -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">Team Suckbags</div>
+        <div class="record">(7-7-0, 6th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">Hail-Mary Poppins</div>
+        <div class="record">(9-5-0, 2nd)</div>
+      </div>
+
+      <div class="score win">121.1</div>
+      <div></div>
+      <div class="score lose" style="text-align:right">80.7</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — Team Suckbags</h4>
+        <div class="topline"><span>Christian McCaffrey</span><span>29.6</span></div>
+        <div class="topline"><span>Saints D/ST</span><span>18.0</span></div>
+        <div class="topline"><span>Harold Fannin Jr.</span><span>17.5</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — Hail-Mary Poppins</h4>
+        <div class="topline"><span>Stefon Diggs</span><span>18.3</span></div>
+        <div class="topline"><span>Jahmyr Gibbs</span><span>17.8</span></div>
+        <div class="topline"><span>C.J. Stroud</span><span>11.0</span></div>
+      </div>
+    </div>
+
+    <h3>Consolation Ladder</h3>
+
+    <!-- ccc vs Action Jackson -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">cape cod cornholers</div>
+        <div class="record">(7-7-0, 5th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">Action Jackson</div>
+        <div class="record">(9-5-0, 3rd)</div>
+      </div>
+
+      <div class="score win">108.2</div>
+      <div></div>
+      <div class="score lose" style="text-align:right">71.3</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — ccc</h4>
+        <div class="topline"><span>Bijan Robinson</span><span>26.3</span></div>
+        <div class="topline"><span>Caleb Williams</span><span>21.0</span></div>
+        <div class="topline"><span>Blake Corum</span><span>12.6</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — Action Jackson</h4>
+        <div class="topline"><span>Chase Brown</span><span>30.9</span></div>
+        <div class="topline"><span>Ja’Marr Chase</span><span>15.4</span></div>
+        <div class="topline"><span>A.J. Brown</span><span>14.0</span></div>
+      </div>
+    </div>
+
+    <!-- Throwbi vs SMYTD -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">Throwbi-Wan Kenobi</div>
+        <div class="record">(7-7-0, 9th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">Show Me Your TD’s</div>
+        <div class="record">(7-7-0, 7th)</div>
+      </div>
+
+      <div class="score lose">104.7</div>
+      <div></div>
+      <div class="score win" style="text-align:right">112.9</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — Throwbi</h4>
+        <div class="topline"><span>George Kittle</span><span>21.0</span></div>
+        <div class="topline"><span>RJ Harvey</span><span>20.1</span></div>
+        <div class="topline"><span>De’Von Achane</span><span>16.5</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — SMYTD</h4>
+        <div class="topline"><span>Matthew Stafford</span><span>30.6</span></div>
+        <div class="topline"><span>James Cook III</span><span>25.9</span></div>
+        <div class="topline"><span>Dalton Schultz</span><span>12.0</span></div>
+      </div>
+    </div>
+
+    <!-- Cape Leatherheads vs 1bourbon -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">Cape Leatherheads</div>
+        <div class="record">(3-11-0, 11th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">1bourbon1scotch 1beer</div>
+        <div class="record">(7-7-0, 8th)</div>
+      </div>
+
+      <div class="score win">124.3</div>
+      <div></div>
+      <div class="score lose" style="text-align:right">91.7</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — Cape Leatherheads</h4>
+        <div class="topline"><span>Brock Purdy</span><span>30.1</span></div>
+        <div class="topline"><span>Jaylen Warren</span><span>28.1</span></div>
+        <div class="topline"><span>Saquon Barkley</span><span>21.2</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — 1bourbon1scotch 1beer</h4>
+        <div class="topline"><span>Drake Maye</span><span>23.5</span></div>
+        <div class="topline"><span>Derrick Henry</span><span>22.8</span></div>
+        <div class="topline"><span>Cam Little</span><span>11.0</span></div>
+      </div>
+    </div>
+
+    <!-- CTE vs Paws -->
+    <div class="matchup">
+      <div class="teamblock">
+        <div class="teamname">CTE Patient</div>
+        <div class="record">(2-12-0, 12th)</div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="teamblock" style="text-align:right">
+        <div class="teamname">Paws Leslie</div>
+        <div class="record">(6-8-0, 10th)</div>
+      </div>
+
+      <div class="score lose">111.5</div>
+      <div></div>
+      <div class="score win" style="text-align:right">123.2</div>
+    </div>
+    <div class="tops cols-2">
+      <div class="topbox">
+        <h4>Top Performers — CTE</h4>
+        <div class="topline"><span>Chris Olave</span><span>31.8</span></div>
+        <div class="topline"><span>Jalen Hurts</span><span>19.0</span></div>
+        <div class="topline"><span>Travis Etienne Jr.</span><span>14.6</span></div>
+      </div>
+      <div class="topbox">
+        <h4>Top Performers — Paws</h4>
+        <div class="topline"><span>Ashton Jeanty</span><span>31.3</span></div>
+        <div class="topline"><span>Joe Burrow</span><span>28.6</span></div>
+        <div class="topline"><span>Zay Flowers</span><span>17.7</span></div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- TEAM CAPSULES -->
+  <!-- TEAM CAPSULES (YOUR EXACT LINES) -->
   <div class="card">
     <h2>🧾 Team Capsules</h2>
-    <h3>Puka Amon Deez Nuts</h3><p>Total domination from start to finish.</p>
-    <h3>Fourth and Forever</h3><p>Everything broke at the wrong time.</p>
-    <h3>Team Suckbags</h3><p>Messy, effective, and advancing.</p>
-    <h3>Hail-Mary Poppins</h3><p>No spark when it mattered.</p>
-    <h3>cape cod cornholers</h3><p>Quietly professional.</p>
-    <h3>Action Jackson</h3><p>Too many landmines.</p>
-    <h3>Show Me Your TD’s</h3><p>Survived the chaos.</p>
-    <h3>Throwbi-Wan Kenobi</h3><p>Strong but not enough.</p>
-    <h3>Cape Leatherheads</h3><p>Efficient and decisive.</p>
-    <h3>1bourbon1scotch 1beer</h3><p>Henry showed up alone.</p>
-    <h3>Paws Leslie</h3><p>Statement win.</p>
-    <h3>CTE Patient</h3><p>Heartbreak again.</p>
+
+    <h3>Puka Amon Deez Nuts</h3>
+    <p>Total domination from start to finish.</p>
+
+    <h3>Fourth and Forever</h3>
+    <p>Everything broke at the wrong time.</p>
+
+    <h3>Team Suckbags</h3>
+    <p>Messy, effective, and advancing.</p>
+
+    <h3>Hail-Mary Poppins</h3>
+    <p>No spark when it mattered.</p>
+
+    <h3>cape cod cornholers</h3>
+    <p>Quietly professional.</p>
+
+    <h3>Action Jackson</h3>
+    <p>Too many landmines.</p>
+
+    <h3>Show Me Your TD’s</h3>
+    <p>Survived the chaos.</p>
+
+    <h3>Throwbi-Wan Kenobi</h3>
+    <p>Strong but not enough.</p>
+
+    <h3>Cape Leatherheads</h3>
+    <p>Efficient and decisive.</p>
+
+    <h3>1bourbon1scotch 1beer</h3>
+    <p>Henry showed up alone.</p>
+
+    <h3>Paws Leslie</h3>
+    <p>Statement win.</p>
+
+    <h3>CTE Patient</h3>
+    <p>Heartbreak again.</p>
   </div>
 
 </div>
